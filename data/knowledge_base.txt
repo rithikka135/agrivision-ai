@@ -1,0 +1,104 @@
+Disease: Pepper Bell Bacterial Spot
+Cause: Xanthomonas euvesicatoria / Xanthomonas campestris bacteria.
+High-Risk Weather: Warm temperatures (24°C to 30°C), high relative humidity (>85%), and rain or overhead watering.
+Chemical Treatment: Apply fixed copper fungicides mixed with Mancozeb or Actigard every 7 to 10 days during humid weather.
+Organic Treatment: Spray bio-fungicides containing Bacillus subtilis or use dilute copper soap solutions early in disease onset.
+Prevention: Use certified disease-free seeds, avoid overhead irrigation, and rotate crops away from Solanaceous plants for 3 years.
+
+Disease: Pepper Bell Healthy
+Cause: No disease detected.
+High-Risk Weather: Normal growing conditions.
+Chemical Treatment: None required.
+Organic Treatment: Maintain standard organic soil nutrition and routine neem oil protective sprays if needed.
+Prevention: Maintain proper spacing, drip irrigation, and balanced fertilization.
+
+Disease: Potato Early Blight
+Cause: Alternaria solani fungus.
+High-Risk Weather: Moderate temperatures (20°C to 25°C) with alternating wet and dry conditions.
+Chemical Treatment: Apply Chlorothalonil, Mancozeb, or Azoxystrobin at the first sign of leaf spots.
+Organic Treatment: Spray copper-based fungicides or bio-fungicides containing Bacillus amyloliquefaciens.
+Prevention: Destroy infected crop debris after harvest, rotate crops, and maintain adequate nitrogen fertility.
+
+Disease: Potato Late Blight
+Cause: Phytophthora infestans (fungal-like oomycete pathogen).
+High-Risk Weather: High relative humidity (>80%) and cool-to-moderate temperatures (15°C to 24°C).
+Chemical Treatment: Apply systemic fungicides like Metalaxyl, Cymoxanil, or Chlorothalonil preventatively.
+Organic Treatment: Apply copper hydroxide or copper sulfate sprays strictly before prolonged rainy periods.
+Prevention: Plant resistant seed tubers, eliminate volunteer potato plants, and ensure proper soil drainage.
+
+Disease: Potato Healthy
+Cause: No disease detected.
+High-Risk Weather: Normal growing conditions.
+Chemical Treatment: None required.
+Organic Treatment: Continue standard crop management practices.
+Prevention: Keep soil hill structure intact and monitor periodically for pests.
+
+Disease: Tomato Bacterial Spot
+Cause: Xanthomonas vesicatoria bacteria.
+High-Risk Weather: High humidity, rainy conditions, and warm temperatures (24°C to 30°C).
+Chemical Treatment: Apply copper hydroxide combined with Mancozeb to reduce bacterial resistance.
+Organic Treatment: Apply copper octanoate (copper soap) or bio-bactericides early in the morning.
+Prevention: Avoid working in wet fields, prune lower branches to stop soil splash, and sanitize tools.
+
+Disease: Tomato Early Blight
+Cause: Alternaria linariae / Alternaria solani fungus.
+High-Risk Weather: Warm temperatures with frequent heavy dew or rainfall.
+Chemical Treatment: Apply Mancozeb, Chlorothalonil, or Difenoconazole every 7 to 14 days.
+Organic Treatment: Apply copper fungicides or potassium bicarbonate solution.
+Prevention: Mulch around the base of plants to prevent soil-to-leaf splashing and prune bottom foliage.
+
+Disease: Tomato Late Blight
+Cause: Phytophthora infestans.
+High-Risk Weather: Cool, wet weather with high humidity (>90%).
+Chemical Treatment: Spray Chlorothalonil, Dimethomorph, or Fluazinam immediately upon local outbreak warnings.
+Organic Treatment: Apply copper soap formulations every 5 to 7 days during high humidity.
+Prevention: Ensure good air movement between rows and destroy all infected foliage immediately.
+
+Disease: Tomato Leaf Mold
+Cause: Passalora fulva (Cladosporium fulvum) fungus.
+High-Risk Weather: High relative humidity (>85%) and moderate temperatures inside greenhouses or enclosed fields.
+Chemical Treatment: Apply Difenoconazole, Chlorothalonil, or Copper Oxychloride.
+Organic Treatment: Spray bio-fungicides based on Bacillus subtilis or Trichoderma species.
+Prevention: Maximize greenhouse ventilation, maintain wider spacing, and avoid leaf wetness.
+
+Disease: Tomato Septoria Leaf Spot
+Cause: Septoria lycopersici fungus.
+High-Risk Weather: Extended wet weather with temperatures around 20°C to 25°C.
+Chemical Treatment: Apply Chlorothalonil, Mancozeb, or Copper Octanoate sprays.
+Organic Treatment: Apply liquid copper sprays or sulfur formulations at early spot detection.
+Prevention: Stake plants upright, eliminate solanaceous weeds, and drip irrigate instead of overhead spraying.
+
+Disease: Tomato Spider Mites Two Spotted Spider Mite
+Cause: Tetranychus urticae (tiny pest arachnids).
+High-Risk Weather: Hot, dry, and dusty environmental conditions.
+Chemical Treatment: Apply selective miticides like Abamectin, Bifenazate, or Spiromesifen.
+Organic Treatment: Spray insecticidal soap, neem oil, or horticultural oils directly on the undersides of leaves.
+Prevention: Keep field borders dust-free, mist foliage periodically during droughts, and encourage predatory mites.
+
+Disease: Tomato Target Spot
+Cause: Corynespora cassiicola fungus.
+High-Risk Weather: Warm temperatures (25°C to 30°C) with high humidity and rain.
+Chemical Treatment: Spray Azoxystrobin, Pyraclostrobin, or Chlorothalonil.
+Organic Treatment: Apply copper-based bio-fungicides or bio-control agents like Streptomyces sp.
+Prevention: Remove diseased plant residue after harvest and maintain adequate crop spacing.
+
+Disease: Tomato Yellow Leaf Curl Virus
+Cause: Begomovirus transmitted by Whiteflies (Bemisia tabaci).
+High-Risk Weather: Hot, dry seasons when whitefly populations peak.
+Chemical Treatment: Direct chemical control unavailable for viruses; apply Imidacloprid or Acetamiprid against whitefly vectors.
+Organic Treatment: Spray neem oil, yellow sticky traps, or insecticidal soaps to suppress whitefly vectors.
+Prevention: Use insect mesh screens, reflective silver mulches, and plant TYLCV-resistant hybrids.
+
+Disease: Tomato Mosaic Virus
+Cause: Tobamovirus (mechanically transmitted through contact, seed, or tools).
+High-Risk Weather: Spreads rapidly in warm, high-density cultivation environments.
+Chemical Treatment: No chemical cure exists for viral plant infections.
+Organic Treatment: Remove and destroy infected plants immediately to stop field spread.
+Prevention: Wash hands with milk/soap before handling plants, disinfect gardening tools, and use certified seeds.
+
+Disease: Tomato Healthy
+Cause: No disease detected.
+High-Risk Weather: Normal growing conditions.
+Chemical Treatment: None required.
+Organic Treatment: Standard nutritional maintenance.
+Prevention: Routine field inspection and balanced crop care.

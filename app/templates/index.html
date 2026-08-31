@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriVision AI — Next-Gen Crop Health Diagnostic Platform</title>
+    
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hero-gradient { background: radial-gradient(circle at 50% 0%, #052e16 0%, #022c22 40%, #0f172a 100%); }
+        .glass-nav { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen antialiased flex flex-col">
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showLandingPage()">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 shadow-lg shadow-emerald-500/20">
+                    <i data-lucide="sprout" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg tracking-tight text-white">AgriVision<span class="text-emerald-400">.AI</span></span>
+                    <span class="block text-[9px] font-semibold tracking-widest text-emerald-400 uppercase">Enterprise Health Platform</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button onclick="showLandingPage()" class="text-xs font-semibold text-slate-300 hover:text-white transition hidden md:block">Home</button>
+                <button onclick="showAppDashboard()" class="text-xs font-semibold text-slate-300 hover:text-white transition hidden md:block">Features</button>
+                
+                <button onclick="showAppDashboard()" class="flex items-center gap-2 text-xs font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 px-4 py-2 rounded-xl transition shadow-md shadow-emerald-400/20">
+                    <i data-lucide="cpu" class="w-4 h-4"></i>
+                    <span>Launch Diagnostic App</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE 1: LANDING FRONT PAGE -->
+    <div id="landing-page" class="flex-1 flex flex-col">
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto text-center space-y-6 relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Powered by PyTorch EfficientNet-B0 & Grad-CAM XAI
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+                    Precision Disease Detection & <br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-200">AI Agronomic Intelligence</span>
+                </h1>
+
+                <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
+                    Instantly identify plant pathogens across 38 crop classes, visualize infection heatmaps, ingest live microclimate weather risks, and generate exact dosage calculations for field operations.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <button onclick="showAppDashboard()" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 transition text-sm">
+                        <i data-lucide="scan" class="w-5 h-5"></i>
+                        <span>Start Free Leaf Diagnosis</span>
+                    </button>
+                    <a href="#features" class="w-full sm:w-auto border border-slate-700 hover:bg-slate-800 text-slate-300 font-semibold px-6 py-3.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Explore Platform Architecture</span>
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Grid Section -->
+        <section id="features" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h2 class="text-2xl font-bold text-slate-900">Built for Modern Agriculture</h2>
+                <p class="text-xs text-slate-500 mt-1">Bridging computer vision deep learning with field agronomy calculations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                        <i data-lucide="eye" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Grad-CAM Explainable AI</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Visual spatial heatmaps highlight the exact leaf lesion features driving classification, eliminating black-box AI predictions.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                        <i data-lucide="cloud-rain" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Open-Meteo Weather Twin</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Pulls real-time GPS temperature and 24-hour humidity metrics to evaluate spore germination risk scores dynamically.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 mb-4">
+                        <i data-lucide="calculator" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Dosage & Tank Calculator</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">Computes chemical volumes (mL/g), water requirements, and 15L knapsack pump loads based on custom field acreage.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE 2: DIAGNOSTIC DASHBOARD APP -->
+    <div id="app-dashboard" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- LEFT PANEL: Inputs (5 Cols) -->
+            <div class="lg:col-span-5 space-y-6">
+                
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="font-bold text-slate-800 text-base flex items-center gap-2">
+                            <i data-lucide="scan-line" class="w-5 h-5 text-emerald-600"></i> Leaf Diagnostic Input
+                        </h2>
+                        <button onclick="showLandingPage()" class="text-xs font-semibold text-slate-400 hover:text-slate-600">← Back Home</button>
+                    </div>
+
+                    <form id="diag-form" class="space-y-4">
+                        <!-- Dropzone -->
+                        <div onclick="document.getElementById('image-input').click()" 
+                             class="group relative border-2 border-dashed border-slate-200 hover:border-emerald-500 rounded-2xl p-8 text-center bg-slate-50/50 hover:bg-emerald-50/30 transition cursor-pointer">
+                            
+                            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto shadow-sm border border-slate-100 text-slate-400 group-hover:text-emerald-600 group-hover:scale-110 transition">
+                                <i data-lucide="upload-cloud" class="w-7 h-7"></i>
+                            </div>
+                            <p class="mt-3 text-sm font-semibold text-slate-700">Click to upload leaf photo</p>
+                            <p class="text-xs text-slate-400 mt-1">Supports PNG, JPG or JPEG up to 10MB</p>
+                            
+                            <input type="file" id="image-input" accept="image/*" class="hidden" onchange="previewImage(event)" required>
+                            <div id="file-name" class="mt-2 text-xs font-bold text-emerald-700 bg-emerald-100/50 px-2 py-1 rounded inline-block hidden"></div>
+                        </div>
+
+                        <!-- Image Preview Box -->
+                        <div id="image-preview-box" class="hidden relative rounded-xl overflow-hidden border border-slate-200">
+                            <img id="image-preview" src="" class="w-full h-48 object-cover" alt="Leaf Preview">
+                        </div>
+
+                        <!-- Coordinates -->
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Latitude</label>
+                                <input type="number" step="any" id="lat-input" value="11.0168" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Longitude</label>
+                                <input type="number" step="any" id="lon-input" value="76.9558" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500" required>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="getGPSLocation()" class="w-full flex items-center justify-center gap-2 text-xs font-semibold text-sky-700 bg-sky-50 hover:bg-sky-100 py-2 rounded-lg transition">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span id="geo-status-text">Detect Real GPS Location</span>
+                        </button>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Advisory Audio Language</label>
+                            <select id="lang-input" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                                <option value="en">English (Global)</option>
+                                <option value="ta">Tamil (தமிழ்)</option>
+                                <option value="hi">Hindi (हिंदी)</option>
+                                <option value="te">Telugu (తెలుగు)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 transition">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                            <span>Execute Diagnosis</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Field Scan History Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2 mb-4">
+                        <i data-lucide="history" class="w-4 h-4 text-slate-400"></i> Audit Logs (SQLite)
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead>
+                                <tr class="text-slate-400 border-b border-slate-100">
+                                    <th class="pb-2">Time</th>
+                                    <th class="pb-2">Diagnosis</th>
+                                    <th class="pb-2">Acres</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table-body" class="divide-y divide-slate-50 text-slate-600">
+                                <tr><td colspan="3" class="py-3 text-center text-slate-400">No records found</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: Dashboard Output Engine (7 Cols) -->
+            <div class="lg:col-span-7 space-y-6">
+                
+                <!-- Placeholder Box -->
+                <div id="placeholder-box" class="bg-white rounded-2xl p-12 text-center border border-slate-200 shadow-sm flex flex-col items-center justify-center min-h-[500px]">
+                    <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 mb-4">
+                        <i data-lucide="microscope" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-700 text-lg">Awaiting Image Input</h3>
+                    <p class="text-xs text-slate-400 max-w-sm mt-1">Upload an infected leaf photograph and click "Execute Diagnosis" to view real-time disease classification, weather risks, and treatment plans.</p>
+                </div>
+
+                <!-- Loading Spinner State -->
+                <div id="loading-box" class="hidden bg-white rounded-2xl p-12 text-center border border-slate-200 shadow-sm flex-col items-center justify-center min-h-[500px]">
+                    <div class="w-12 h-12 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin mb-4"></div>
+                    <h3 class="font-bold text-slate-800 text-base">Running Deep Learning Inference...</h3>
+                    <p class="text-xs text-slate-400 mt-1">Processing Grad-CAM spatial heatmaps & requesting weather APIs</p>
+                </div>
+
+                <!-- Diagnostic Results Engine -->
+                <div id="result-box" class="hidden space-y-6">
+                    
+                    <!-- Primary Classification Banner -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+                            <div>
+                                <span class="text-xs font-bold tracking-wider text-emerald-600 uppercase">Primary Diagnosis</span>
+                                <h2 id="res-disease" class="text-xl font-extrabold text-slate-900 mt-0.5">--</h2>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs font-semibold text-slate-400 block">AI Confidence</span>
+                                <span id="res-confidence" class="text-lg font-black text-slate-800">0%</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Context Cards -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-amber-50/60 border border-amber-200/60 rounded-xl p-3 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0">
+                                    <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold text-amber-700 uppercase block">Outbreak Risk</span>
+                                    <span id="res-risk" class="text-xs font-bold text-amber-900">Moderate</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-50/60 border border-blue-200/60 rounded-xl p-3 flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-blue-500 text-white flex items-center justify-center shrink-0">
+                                    <i data-lucide="cloud-sun" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold text-blue-700 uppercase block">Live Weather</span>
+                                    <span id="res-weather" class="text-xs font-bold text-blue-900">25°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grad-CAM & Voice Multimodal Section -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Grad-CAM Card -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-slate-500 uppercase flex items-center gap-2 mb-3">
+                                <i data-lucide="eye" class="w-4 h-4 text-emerald-600"></i> Grad-CAM Visual Heatmap
+                            </span>
+                            <div class="rounded-xl overflow-hidden border border-slate-100 bg-slate-950">
+                                <img id="res-gradcam" src="" class="w-full h-44 object-cover" alt="Grad-CAM Image">
+                            </div>
+                        </div>
+
+                        <!-- Voice Note Card -->
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold text-slate-500 uppercase flex items-center gap-2 mb-3">
+                                    <i data-lucide="volume-2" class="w-4 h-4 text-emerald-600"></i> Audio Advisory
+                                </span>
+                                <audio id="res-audio" controls class="w-full mt-2 rounded-lg"></audio>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100">
+                                <p id="res-advisory" class="text-xs text-slate-600 line-clamp-4 italic"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chemical Dosage Calculator -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                                <i data-lucide="beaker" class="w-4 h-4 text-emerald-600"></i> Precision Dosage & Tank Calculator
+                            </h3>
+                            <span id="acres-val" class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">1.0 Acre</span>
+                        </div>
+
+                        <div>
+                            <input type="range" id="acres-slider" min="0.25" max="25" step="0.25" value="1.0" class="w-full accent-emerald-600">
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 text-xs">
+                            <div>
+                                <span class="text-slate-400 block">Product</span>
+                                <strong id="dos-chem" class="text-slate-800 font-bold block truncate">-</strong>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block">Total Qty</span>
+                                <strong id="dos-qty" class="text-rose-600 font-bold block">-</strong>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block">Water Volume</span>
+                                <strong id="dos-water" class="text-slate-800 font-bold block">-</strong>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 block">PHI Safety</span>
+                                <strong id="dos-phi" class="text-slate-800 font-bold block">-</strong>
+                            </div>
+                        </div>
+
+                        <div class="bg-emerald-50/60 border border-emerald-200/60 p-3 rounded-xl flex items-start gap-3 text-xs text-emerald-900">
+                            <i data-lucide="info" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                            <span id="dos-pumps">Select a field size to calculate knapsack pump loads.</span>
+                        </div>
+                    </div>
+
+                    <!-- Loss Risk & Dealer Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-2">
+                            <h4 class="font-bold text-slate-800 text-xs uppercase flex items-center gap-2 text-amber-700">
+                                <i data-lucide="trending-down" class="w-4 h-4"></i> Economic Loss Risk
+                            </h4>
+                            <div class="text-xl font-black text-rose-600" id="econ-loss">₹0</div>
+                            <div class="text-xs text-slate-500 space-y-1">
+                                <p>Target Crop: <strong id="econ-crop" class="text-slate-700">-</strong></p>
+                                <p>Projected Yield: <strong id="econ-yield" class="text-slate-700">-</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-2">
+                            <h4 class="font-bold text-slate-800 text-xs uppercase flex items-center gap-2 text-sky-700">
+                                <i data-lucide="store" class="w-4 h-4"></i> Local Input Dealers
+                            </h4>
+                            <ul id="dealer-list" class="text-xs space-y-2 text-slate-600">
+                                <li class="italic text-slate-400">Run scan to view nearby dealers</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Export PDF Button -->
+                    <button id="download-pdf-btn" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-4 rounded-xl shadow-md flex items-center justify-center gap-2 transition">
+                        <i data-lucide="file-down" class="w-5 h-5"></i>
+                        <span>Export Official PDF Field Certificate</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Navigation & Application Logic -->
+    <script>
+        lucide.createIcons();
+
+        // Navigation Switcher Functions
+        function showLandingPage() {
+            document.getElementById('landing-page').classList.remove('hidden');
+            document.getElementById('app-dashboard').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showAppDashboard() {
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('app-dashboard').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const form = document.getElementById('diag-form');
+        const resultBox = document.getElementById('result-box');
+        const placeholderBox = document.getElementById('placeholder-box');
+        const loadingBox = document.getElementById('loading-box');
+        const slider = document.getElementById('acres-slider');
+        const acresVal = document.getElementById('acres-val');
+        
+        let lastUploadedFile = null;
+        let currentDisease = "";
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image-preview').src = e.target.result;
+                    document.getElementById('image-preview-box').classList.remove('hidden');
+                    document.getElementById('file-name').innerText = file.name;
+                    document.getElementById('file-name').classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function getGPSLocation() {
+            const statusText = document.getElementById('geo-status-text');
+            if ("geolocation" in navigator) {
+                statusText.innerText = "Locating...";
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        document.getElementById('lat-input').value = position.coords.latitude.toFixed(4);
+                        document.getElementById('lon-input').value = position.coords.longitude.toFixed(4);
+                        statusText.innerText = "GPS Locked";
+                    },
+                    () => { statusText.innerText = "GPS Error"; }
+                );
+            }
+        }
+
+        async function loadScanHistory() {
+            const res = await fetch('/scan-history');
+            if (res.ok) {
+                const history = await res.json();
+                const tbody = document.getElementById('history-table-body');
+                if (history.length > 0) {
+                    tbody.innerHTML = history.slice(0, 4).map(row => `
+                        <tr>
+                            <td class="py-2">${row.timestamp}</td>
+                            <td class="py-2 font-semibold text-slate-800">${row.disease}</td>
+                            <td class="py-2">${row.acres} Ac</td>
+                        </tr>
+                    `).join('');
+                }
+            }
+        }
+
+        loadScanHistory();
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('image-input');
+            if (!fileInput.files[0]) return;
+            lastUploadedFile = fileInput.files[0];
+
+            placeholderBox.classList.add('hidden');
+            resultBox.classList.add('hidden');
+            loadingBox.classList.remove('hidden');
+            loadingBox.classList.add('flex');
+
+            const formData = new FormData();
+            formData.append('file', lastUploadedFile);
+            formData.append('latitude', document.getElementById('lat-input').value);
+            formData.append('longitude', document.getElementById('lon-input').value);
+            formData.append('language', document.getElementById('lang-input').value);
+            formData.append('field_acres', slider.value);
+
+            try {
+                const response = await fetch('/diagnose', { method: 'POST', body: formData });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    currentDisease = data.diagnosis.disease_detected;
+
+                    document.getElementById('res-disease').innerText = currentDisease;
+                    document.getElementById('res-confidence').innerText = `${data.confidence_score}%`;
+                    document.getElementById('res-risk').innerText = data.diagnosis.weather_context.risk_score;
+                    document.getElementById('res-weather').innerText = `${data.diagnosis.weather_context.temperature}°C`;
+                    document.getElementById('res-advisory').innerText = data.diagnosis.llm_advisory;
+                    document.getElementById('res-gradcam').src = data.gradcam_image_b64;
+
+                    if (data.diagnosis.audio_b64) {
+                        document.getElementById('res-audio').src = `data:audio/mp3;base64,${data.diagnosis.audio_b64}`;
+                    }
+
+                    if (data.field_dosage) renderDosageData(data.field_dosage);
+                    if (data.economic_risk) renderEconomicData(data.economic_risk);
+                    if (data.nearby_dealers) renderDealerData(data.nearby_dealers);
+
+                    loadingBox.classList.add('hidden');
+                    loadingBox.classList.remove('flex');
+                    resultBox.classList.remove('hidden');
+                    loadScanHistory();
+                }
+            } catch (err) {
+                alert('Error running real-time diagnosis.');
+                loadingBox.classList.add('hidden');
+                placeholderBox.classList.remove('hidden');
+            }
+        });
+
+        slider.addEventListener('input', async () => {
+            acresVal.innerText = `${slider.value} Acre(s)`;
+            if (currentDisease) {
+                const formData = new FormData();
+                formData.append('disease_name', currentDisease);
+                formData.append('field_acres', slider.value);
+
+                const res = await fetch('/calculate-dosage', { method: 'POST', body: formData });
+                if (res.ok) {
+                    const data = await res.json();
+                    renderDosageData(data.field_dosage);
+                    if (data.economic_risk) renderEconomicData(data.economic_risk);
+                }
+            }
+        });
+
+        function renderDosageData(dosage) {
+            if (dosage.status === "No Chemical Required") {
+                document.getElementById('dos-chem').innerText = "None (Healthy)";
+                document.getElementById('dos-qty').innerText = "0 ml";
+                document.getElementById('dos-water').innerText = "0 L";
+                document.getElementById('dos-phi').innerText = "0 Days";
+                document.getElementById('dos-pumps').innerText = dosage.message;
+            } else {
+                document.getElementById('dos-chem').innerText = dosage.chemical_name;
+                document.getElementById('dos-qty').innerText = dosage.total_chemical_qty;
+                document.getElementById('dos-water').innerText = dosage.total_water_required;
+                document.getElementById('dos-phi').innerText = dosage.pre_harvest_interval;
+                document.getElementById('dos-pumps').innerText = `${dosage.mixing_instructions.total_15L_pumps} Pump Tanks Required. ${dosage.mixing_instructions.guideline}`;
+            }
+        }
+
+        function renderEconomicData(econ) {
+            document.getElementById('econ-crop').innerText = econ.crop_type;
+            document.getElementById('econ-yield').innerText = econ.projected_yield_kg;
+            document.getElementById('econ-loss').innerText = econ.estimated_financial_loss || "₹0";
+        }
+
+        function renderDealerData(dealers) {
+            const listElem = document.getElementById('dealer-list');
+            if (dealers && dealers.length > 0) {
+                listElem.innerHTML = dealers.map(d => `
+                    <li class="flex items-center justify-between py-1 border-b border-slate-100 last:border-none">
+                        <span class="font-semibold text-slate-800">${d.name}</span>
+                        <a href="${d.maps_url}" target="_blank" class="text-emerald-600 font-bold hover:underline flex items-center gap-1">
+                            Map <i data-lucide="external-link" class="w-3 h-3"></i>
+                        </a>
+                    </li>
+                `).join('');
+                lucide.createIcons();
+            }
+        }
+
+        document.getElementById('download-pdf-btn').addEventListener('click', async () => {
+            if (!lastUploadedFile) return;
+            const formData = new FormData();
+            formData.append('file', lastUploadedFile);
+            formData.append('latitude', document.getElementById('lat-input').value);
+            formData.append('longitude', document.getElementById('lon-input').value);
+            formData.append('language', document.getElementById('lang-input').value);
+
+            const response = await fetch('/download-pdf', { method: 'POST', body: formData });
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Crop_Health_Diagnostic_Report.pdf';
+                a.click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Ignore model weight files (manage via Git LFS or external download)
+models/*.pth
+models/*.onnx
+
+# Ignore datasets
+dataset/
+PlantVillage/
+
+# Ignore Python cache & virtual environment
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+
+# Ignore SQLite database
+*.db
