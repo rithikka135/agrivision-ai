@@ -1,9 +1,10 @@
-# Use a lightweight Python base image
+# Use a stable Python base image
 FROM python:3.10-slim
 
-# Install system dependencies required for OpenCV and PyTorch
+# Install modern OpenGL system libraries compatible with OpenCV
 RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
+    libgl1 \
+    libglx-mesa0 \
     libglib2.0-0 \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
@@ -14,7 +15,7 @@ WORKDIR /app
 # Copy requirement files first for layer caching
 COPY requirements.txt .
 
-# Install CPU version of PyTorch to keep the image size small (< 1 GB)
+# Install CPU version of PyTorch to keep image size small (< 1 GB)
 RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
 RUN pip install --no-cache-dir -r requirements.txt
 
