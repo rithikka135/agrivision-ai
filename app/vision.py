@@ -1,6 +1,7 @@
 import os
 import io
 import base64
+import requests
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -10,11 +11,41 @@ from PIL import Image
 import numpy as np
 import cv2
 
+def estimate_leaf_damage(image: Image.Image) -> float:
+    """
+    Calculates percentage of necrotic/diseased leaf surface using OpenCV HSV color masks.
+    """
+    orig_np = np.array(image.convert("RGB"))
+    cv_img = cv2.cvtColor(orig_np, cv2.COLOR_RGB2BGR)
+    hsv = cv2.cvtColor(cv_img, cv2.COLOR_BGR2HSV)
+
+    # Mask healthy green regions (Hue 35-85)
+    lower_green = np.array([35, 40, 40])
+    upper_green = np.array([85, 255, 255])
+    green_mask = cv2.inRange(hsv, lower_green, upper_green)
+
+    # Mask total leaf area (filtering out white/grey background)
+    gray = cv2.cvtColor(cv_img, cv2.COLOR_BGR2GRAY)
+    _, leaf_mask = cv2.threshold(gray, 230, 255, cv2.THRESH_BINARY_INV)
+
+    total_leaf_pixels = cv2.countNonZero(leaf_mask)
+    healthy_pixels = cv2.countNonZero(green_mask)
+
+    if total_leaf_pixels == 0:
+        return 0.0
+
+    damaged_pixels = max(0, total_leaf_pixels - healthy_pixels)
+    damage_pct = (damaged_pixels / total_leaf_pixels) * 100.0
+    return round(min(damage_pct, 100.0), 2)
+
+
 class FineTunedDiseaseClassifier:
     def __init__(self, model_path="models/plant_disease2_efficientnet.pth"):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
-        # 1. Fallback Path Selection (Prefers Model 2 if available)
+        os.makedirs("models", exist_ok=True)
+
+        # 1. Fallback & Download Handling for Cloud Deployments
         if not os.path.exists(model_path) and os.path.exists("models/plant_disease_efficientnet.pth"):
             model_path = "models/plant_disease_efficientnet.pth"
 
@@ -33,7 +64,6 @@ class FineTunedDiseaseClassifier:
             
             if isinstance(checkpoint, dict) and 'model_state_dict' in checkpoint:
                 state_dict = checkpoint['model_state_dict']
-                # Dynamically load the 38 class names stored inside Model 2
                 if 'class_names' in checkpoint:
                     self.class_names = checkpoint['class_names']
                 else:
@@ -126,11 +156,14 @@ class FineTunedDiseaseClassifier:
         confidence_score = round(conf.item() * 100, 2)
         predicted_idx = pred.item()
 
-        # Reasonable Confidence Guard for Field Leaf Photos (35.0%)
+        # Low confidence guard for field photos
         if confidence_score < 35.0:
             class_label = "Unclear / Non-Crop Image Detected"
+            damage_pct = 0.0
         else:
             class_label = self.class_names[predicted_idx]
+            # Calculate surface damage area using HSV segmentation
+            damage_pct = estimate_leaf_damage(image)
 
         # Generate Grad-CAM Heatmap
         try:
@@ -146,7 +179,7 @@ class FineTunedDiseaseClassifier:
             res_pil.save(buf, format="JPEG")
             gradcam_b64 = f"data:image/jpeg;base64,{base64.b64encode(buf.getvalue()).decode('utf-8')}"
 
-        return class_label, confidence_score, gradcam_b64
+        return class_label, confidence_score, gradcam_b64, damage_pct
 
 # Instantiate global classifier for FastAPI app
 classifier = FineTunedDiseaseClassifier()
